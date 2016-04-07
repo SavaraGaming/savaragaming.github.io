@@ -1,0 +1,183 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 531,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Alice-v2.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 531px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Alice v2
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+
+			<div id="center">
+				Play the Original Prototype<br />
+				<a href="v1" target="_blank">Alice v1</a>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			Left/Right Arrows - Rotate
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The theme for this prototype was growing and shrinking.  I chose to incorporate this in terms of "mass" moving through space.  The original concept involved the feeling of gaining and losing mass as a visible effect of the rotational velocity of the player's cubes.  The iteration focuses the gameplay down to something less in line with the original idea but much more playable and intuitive.<br /><br />
+
+			The initial prototype's issues seem to mostly be related to the visual necessities that weren't properly visible to the player.  The obstacles weren't clearly visible behind the collection of cubes the player had, and the goal at the end wasn't shown off properly.  Also, the gameplay of rotating objects freely to orient them properly did not match the context of the obstacles themselves, which were designed to be approached at fixed rotations of 90 degrees.  This is primarily due to the use of cubes as rotatable objects, and it left a disconnect between being able to rotate freely and being able to line up your cube pattern with obstacles.<br /><br />
+
+			This iteration focuses on fixing those two main issues:  visual clarity and gameplay control/responsiveness.  A number of colors were changed and transparency was added to help the player see what is going on.  The idea of having large walls as "gates" that block the passage of cubes was replaced with more compact and clear obstacles that might better represent the solution to the puzzle along the way.  The controls were also improved by speeding up rotation and locking along a 90 degree grid.  This way, the player won't make a mistake by being off by a slight amount and can even make last minute decisions based on the upcoming obstacles.  A "rail" was added in the hopes of making the middle cube's path more clear when things get complicated.  It may or may not have succeeded, since sometimes the rail can sometimes be obfuscated by other transparent objects.  At the same time, the background was simplified with the removal of all of the walls so that the important game objects don't blend in visually with something behind them.
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			v2<br />
+			&nbsp;- Added a rail as a visual cue to where your main cube is headed.<br />
+			&nbsp;- The mass idea (with simulated rotational inertia) wasn't conducive to better gameplay, so scrapped it entirely.<br />
+			&nbsp;- Replaced rotational inertia (continuous rotational input) with 90 degree locked control.<br />
+			&nbsp;- Increased the speed at which the cubes can be rotated.<br />
+			&nbsp;- Changed the obstacles to be smaller chunks of cubes instead of giant walls.<br />
+			&nbsp;- Removed the environment to prevent colors in the background from blending with each other.<br />
+			&nbsp;- Added a skybox of outer space and changed the overall color scheme of the game.<br />
+			&nbsp;- Changed a lot of the colors to make the game work visually.  This included adding transparency to help the player see important objects in the game.
+			<br />
+
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

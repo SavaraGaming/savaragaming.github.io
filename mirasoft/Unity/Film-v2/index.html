@@ -1,0 +1,208 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 664,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Film-v2.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 664px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Film v2 (<i>Classic Series - 8-Bit</i>)
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+			
+			<div id="center">
+				Play the Original Prototype<br />
+				<a href="v1" target="_blank">Film v1</a>
+			</div>
+			<br />
+
+			<b>Controls:</b><br />
+			'X' - Punch<br />
+			'Z' - Jump<br />
+			Left/Right Arrows - Move<br />
+			Hold 'I' + 'A' + 'N' - Hell Mode<br />
+			Hold 'C' + 'O' + 'W' - Super Mode
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The theme of this prototype was to make a film adaptation.  It was a natural decision to make this prototype part 2 of the Classic Series, considering the NES saw the release of so many movie adaptations that the practice became almost a genre on its own.  Of particular interest was the low quality of many such games, and I thought it would be humorous to attempt an adaptation of a film already recognized for its "camp."  The result was intended to be a "bad" NES game that pays tribute to both the film that inspired it as well as "bad" NES games in general.<br /><br />
+
+			Version 2's purpose was to expand the content a little and improve the "impact" of the interactions.  We definitely took the exploitation side of this project and ran with it.  This is in relation to both the campy film the game is based on and the crappy film adaptation genre of the NES era.  The new enemy does a flying jump kick, a common action film/game cliche (which actually occurs in the film).  The jump kick comes at you quickly, so you can either try to punch him out of his kick by reacting, or you can jump over him and punch him as he tries to run.  Once you beat him, he explodes.<br /><br />
+
+			There is a bit of finickiness with the controls, but it was not ironed out since we felt a campy film adaptation of the time wouldn't have absolutely perfect control.  This ends up feeling in-character for the most part, even if sometimes frustrating.  Which leads into the next point:  the difficulty.  It is really hard to not die in the revision.  The new enemies have a really fast attack that closes in on the player, the way the game registers damage means you can take a lot without making too many mistakes, and there is no way to recover health.  These were also things that were not polished, because the feel of playing an old NES film adaptation is generally wrought with the pains of suffering through poor design that ends up with the player defeated.  Aside from this, there is an element to the film in which the main character is sort of being worn down through many ordeals, so this eventual defeat represents the core idea of a protagonist wading through an onslaught of battles.<br /><br />
+
+			Reminiscent of many NES games, this one has cheats.  The ideas for the cheats came about when a bug occurred during development due to an oversight.  It ended up being fun when combined with one of our test scenarios, so in keeping with the NES spirit, we implemented both the bug and the test as cheats (complete with their own active indicators).
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			&nbsp;- Added a player health bar.<br />
+			&nbsp;- Decreased active frames of the player's punching hitbox (increases difficulty).<br />
+			&nbsp;- Added knockback to enemies getting hit.<br />
+			&nbsp;- Added a second enemy.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Walks up to the player.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- He does a flying jump kick when close enough to the player, then runs away.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Explodes when he dies.<br />
+			&nbsp;- Added sound effects for when enemies take damage and explode.<br />
+			&nbsp;- Added cheat codes.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Super Mode makes your dude a badass.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Hell Mode... well you'll see.
+			<br /><br />
+
+			<b>Team Members:</b><br />
+			Miles Raphael<br />
+			Ryan Mendes<br />
+			Erica Pramer
+			<br /><br />
+
+			<b>Credits:</b><br />
+			- LJN Toys, Limited - Logo Source<br />
+			- <i>The Street Fighter</i> (Film, 1974) - Title Screen<br />
+			- <i>Power Blade</i> (NES, 1991) - Sprites<br />
+			- <i>Dr. Jekyll and Mr. Hyde</i> (NES, 1988) - Sprites<br />
+			- <i>Double Dragon</i> (NES, 1987) - Sprites<br />
+			- <i>Kick Master</i> (NES, 1992) - Background<br />
+			- <i>Ninja Gaiden</i> (NES, 1988) - Music<br />
+			- <i>Contra</i> (NES, 1988) - Music and Sounds<br />
+			- <i>Metal Storm</i> (NES, 1991) - Explosion
+			<br />
+
+        </div>
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

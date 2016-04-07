@@ -1,0 +1,215 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 531,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Midterm.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 531px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Clone v3
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+
+			<div id="center">
+				Play the Original Prototypes<br />
+				<a href="v2" target="_blank">Clone v2</a><br />
+				<a href="v1" target="_blank">Clone v1</a>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			Left/Right Arrows - Turn<br />
+			Down Arrow - Increase Acceleration<br />
+			Spacebar - Boost<br />
+			'R' - Reset
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The goal of this prototype was to clone an existing game and deliberately tweak mechanics to achieve new game dynamics.  I chose to clone SkiFree.  I found that the original game had a fairly weak game loop.  The "Score" system, as ignorable as it was, could be easily abused by slowly flipping in place.  This meant the optimal way to "Score" in SkiFree was contrary to the way one would "Fun" in SkiFree, exploring and going fast.  My clone was an attempt to marry the optimal playstyle with the most fun mechanics.  The original attempt at this was simply to keep track of the highest speed reached.<br /><br />
+
+			Version 1 focused on achieving higher and higher speeds by avoiding trees and hitting boosters.  This didn't really have any interesting gameplay dynamics since hitting the trees didn't really punish the player, and the speeds could get so high that hitting trees didn't really do anything perceivable.  In Version 2, a number of mechanics were introduced to create more interesting gameplay.  The player now has a terminal velocity, and any speed boosts the player uses will decay quickly back to that speed.  Turning left and right slow the player's descent, enabling the option to slalom.  Boosters no longer immediately boost the player, giving the player a stored boost so that it can be controlled more effectively.<br /><br />
+
+			Another major change is the addition of Yetis that can kill the player.  Once the player has travelled a certain distance, Yetis start spawning and chase down the player.  The movement controls, as well as the addition of the Down key to increase acceleration, were designed around the avoidance of these Yetis.  It was necessary that the player be able to control their descent and not move too recklessly.<br /><br />
+
+			All of the major changes (Yetis, Terminal Velocity, Control changes) were conducive to changing the primary goal of the game from one based on Speed to one based on Distance Travelled.  Now, the game becomes about skill-based movement through a field of trees, Yetis, and boost pads, while managing a balance between speed and surviving.  Going as fast as possible all the time will cause the player to recklessly run into Yetis.  Going very slow all the time will not yield a high distance and Yetis will swarm around easily.  Managing this balance is the key to surviving and achieving a good Distance score.<br /><br />
+
+			A few of the issues with Version 2 were caused by the game no longer requiring speed, while offering speed as several of the main mechanics.  This disconnect caused the optimal style of play to be "lame".  In other words, the player purposely avoided the use of main mechanics (holding down to move faster, and using boost) in order to easily blow through the game without any risk (could always out pace yetis this way).  This is boring and obviously not good design because elements of the game become completely obsolete.  To remedy this, both speed and avoiding obstacles had to be present.  The addition of a timer re-implemented the necessity of speed as a game mechanic.  The player now has to balance their speed with their maneuverability to make it to the next checkpoint safely.<br /><br />
+
+			Another problem with Version 2 was once a playstyle was established, the player could just repeat this infinitely and only rarely run into trouble.  Now that the checkpoint system is implemented, it was a clear choice to have the game increase in difficulty as the player progressed.  Thus, the ratio of yetis increases the more checkpoints are passed.  This causes increasingly difficult patterns and forces the player to continually optimize their play rather than fall back on repetition.<br /><br />
+
+			A number of "readability" improvements were made to the prototype as well.  All of the indicators only display two decimal places of accuracy.  The timer turns red when time is almost up.  A level indicator keeps track of how far the player has gone.  "Game Over" appears when time runs out.  The booster pickups have been changed to appear like actual pickups and disappear when acquired.  The player boost indicator itself was also improved.  I chose to leave the Speed and Distance indicators, even though they aren't useful, as a throwback to the original SkiFree and the spirit of the "clone".  A number of "serious" bugs were also fixed (can no longer boost while dead), but some minor bugs remain (which are all visual as far as I can tell).
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			v3<br />
+			&nbsp;- Added a countdown timer that ends the game when it reaches 0.<br />
+			&nbsp;- All numbers now only display accuracy up to two decimal places.<br />
+			&nbsp;- Added checkpoints that add more time to the timer.<br />
+			&nbsp;- Removed the starting boost.  Replaced it with a starting checkpoint.<br />
+			&nbsp;- Improved how obstacles are removed from the game world.<br />
+			&nbsp;- Added a "level" counter that displays how many checkpoints the player has passed.<br />
+			&nbsp;- Increased the ratio of yetis as the level count gets higher.  Eventually, there is just a ton of yetis with nothing else around.<br />
+			&nbsp;- Changed the booster art to a particle effect that looks more like a pick-up.<br />
+			&nbsp;- Made the booster pick-up disappear when acquired.<br />
+			&nbsp;- Made the particle effect on the player when boost is available more clear.
+			<br /><br />
+			v2<br />
+			&nbsp;- Added textures: tree, yeti.<br />
+			&nbsp;- Added Yetis that chase the player.  Yetis only spawn if the player has travelled at least 100 meters.<br />
+			&nbsp;- Added player death.<br />
+			&nbsp;- Boost is now stored until the player decides to use it.<br />
+			&nbsp;- Added "Boost Available" particle effect on the player.<br />
+			&nbsp;- Changed high score from "Highest Speed" to a score in terms of Distance travelled.<br />
+			&nbsp;- Changed the way movement behaves in relation to falling speed.  The player can now slalom to slow down and can move totally horizontal if left or right is held long enough.<br />
+			&nbsp;- Added a terminal velocity that prevents infinitely gaining speed.<br />
+			&nbsp;- Added a "streamline body" button to accelerate faster and to a higher terminal velocity.<br />
+			&nbsp;- Added a "streamlined" trail render.<br />
+			&nbsp;- Boost now gives the player a velocity faster than they can achieve without boosting.  Boost quickly decays if you're not holding the Down arrow.  It can now be used to escape yeti's (once per boost).
+			<br /><br />
+
+			Known Bugs:<br />
+			&nbsp;- [Physics] Can sometimes clip through trees.<br />
+			&nbsp;- [Visual] Holding Down doesn't always display the blue trail, however the button is still working.
+			<br />
+
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

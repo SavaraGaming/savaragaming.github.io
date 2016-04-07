@@ -1,0 +1,186 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 664,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Sport-v2.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 664px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Sport v2 (<i>Classic Series - 16-Bit</i>)
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+			
+			<div id="center">
+				Play the Original Prototype<br />
+				<a href="v1" target="_blank">Sport v1</a>
+			</div>
+			<br />
+
+			<b>Controls:</b><br />
+			Left/Right Arrow - Move
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The theme of this prototype was "Sports," and while the meaning of that was open to interpretation at the time, I knew I wanted to complete the Classic Series trilogy.  My goal was to recreate a Mode 7 aesthetic, which is associated with the 16-Bit console era.  Brainstorming some recurring themes of 16-Bit games, I ended up getting stuck on the idea of "surfing," which appears in one of my favorite Sega Genesis games, Shinobi III, as well as in several relatively popular titles.  Working off of that, I whipped up the Mode 7 surfing aesthetic in the initial prototype.<br /><br />
+
+			A few ideas floated around for the revision, but it was difficult to pin down what needed to happen.  We originally wanted some sort of flight or glide mechanic, where the player would use the waves to build up momentum and then glide through hoops in the air for points.  For a while the wave behavior was changed to a "wobble," and a lot of work was done to try and create a sort of Rainbow Road of surfing, wherein the player would glide between water platforms.  We ended up scrapping all of this and just throwing in some barrels!
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			&nbsp;- Added barrels that kill you.
+			<br /><br />
+
+			<b>Team Members:</b><br />
+			Miles Raphael<br />
+			Ryan Mendes<br />
+			Erica Pramer
+			<br /><br />
+
+			<b>Credits:</b><br />
+			Sega Corporation - Logo Source<br />
+			G.E. Team - Skybox<br />
+			<i>Teenage Mutant Ninja Turtles: The Hyperstone Heist</i> (Sega Genesis, 1992) - Water, Barrel<br />
+			<i>Space Harrier</i> (Arcade, 1985) - Main Character<br />
+			<i>Shinobi III: Return of the Ninja Master</i> (Sega Genesis, 1993) - Title Screen, Music<br />
+			<i>Streets of Rage II</i> (Sega Genesis, 1992) - Music<br />
+			<i>Mortal Kombat 3</i> (Sega Genesis, 1995) - Font
+        </div>
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

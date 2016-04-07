@@ -1,0 +1,185 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 531,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "FullSwing.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 531px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../">Home</a> | 
+                <a href="../Unity">Unity</a> | 
+                <a href="../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				<i>Full Swing</i>
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+			
+			<div style="text-align:center;">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/CIHdce1R2Gg" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			'W' / 'A' / 'S' / 'D' - Move Forward/Backward/Left/Right<br />
+			Spacebar - Jump / Wall Jump<br />
+			Hold Left Mouse - Attach Grapple Hook<br />
+			Toggle Right Mouse - Toggle Rope Retraction<br />
+			'R' - Reset level<br />
+			Escape - Pause / Remove Focus
+			<br /><br />
+
+			<b>Concept:</b><br />
+			This is a single-level proof-of-concept of a speedrunning game based around a grappling hook mechanic. 
+			The player can attach their grappling hook onto objects to swing around with the goal of reaching the top of
+			the tower in as little time as possible. The grappling hook cannot be attached to black surfaces. The player can 
+			make the rope retract in order to move towards the hook point by toggling the right mouse button while the 
+			hook is attached to a surface.
+			<br /><br />
+
+			<b>Team Members:</b><br />
+			Miles Raphael<br />
+			Kelsey Kurzeja<br />
+			Sean Lachenberg
+			<br /><br />
+
+			<b>Credits:</b><br />
+			Cadrean - <a href="http://www.newgrounds.com/audio/listen/562943" target="_blank">Power Surge</a><br />
+			Dootsy Development - <a href="https://www.assetstore.unity3d.com/en/#!/content/16687" target="_blank">Animated Horse</a>
+			<br />
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

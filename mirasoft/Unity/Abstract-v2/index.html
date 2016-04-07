@@ -1,0 +1,200 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 664,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Abstract-v2.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 664px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Abstract v2
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+
+			<div id="center">
+				Play the Original Prototype<br />
+				<a href="v1" target="_blank">Abstract v1 (Classic Series - <i>Atari</i>)</a>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			Up Arrow - Accelerate Ship<br />
+			Left/Right Arrows - Rotate Ship<br />
+			Spacebar - Deploy a Satellite
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The original concept for this prototype was inspired by the idea that too many objects orbiting our planet could clutter up, collide with eachother, and cause havoc.  The player's challenge, then, is avoiding existing satellites while placing new ones that aren't on a collision course with others.  The score increments based on how many satellites the player has out concurrently.<br /><br />
+
+			Classic Series - <i>Atari</i> marks the beginning of a three-part Classic Series which recalls the aesthetics of classic video game consoles.  When my teammates pitched me the Space-centric concept, I couldn't escape the thought of Atari 2600, a console with more games with "Space" or "Star" in their titles than any other.  Combine this with the minimalist theme of our prototype, and it seemed the perfect fit to try emulating the Atari's identifiable aesthetic.  Everything, even including the number of visible scanlines, was designed or included with the classic aesthetic in mind.<br /><br />
+
+			The initial prototype, though faithful to the Atari aesthetic in many ways, had issues caused by what dissonance there was between the aesthetic and the chosen game mechanic of orbit.  To alleviate this, the minimal aesthetic of the game was preserved while the Atari qualities were mostly replaced with similar, but much less restrictive, visuals.  This gave us room to work on the interesting part of the mechanics without feeling like we were uncomfortably breaking Atari molds.  Primarily, this meant we could use more floating point stuff, so a lot of the mechanics introduced are related to this addition.<br /><br />
+
+			The revision focuses on a certain image that is created when we deal with "orbiting" bodies.  The ship and the satellites draw trails as they travel, which create an image that is evocative of simplified orbital diagrams.  This remains an abstraction, however, since there is no real gravity.
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			v2<br />
+			&nbsp;- Updated visual style to feel more modern, though still Atari-inspired.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Decreased size of top and bottom borders.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Decreased the saturation of the border colors.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Ship and satellite sprites are now much smaller.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- All moving "sprites" now have trails.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- The planet color has changed (shading was... allowed).<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- The planet has been resized and repositioned to create a different composition.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Changed the Score font (as well, it is not a "sprite" any longer).<br />
+			&nbsp;- Added acceleration to controlling the ship.<br />
+			&nbsp;- Satellites are now spawned with the component of the ship's velocity that is perpendicular to the planet's gravity.  This means satellites can now travel either direction and at different velocities, depending on the ship's velocity.<br />
+			&nbsp;- Satellites can now collide with one another.<br />
+			&nbsp;- Score now increments based on how many satellites currently exist.
+			<br /><br />
+
+			<b>Team Members:</b><br />
+			Miles Raphael<br />
+			Ryan Mendes<br />
+			Erica Pramer
+			<br /><br />
+
+			<b>Credits:</b><br />
+			- Audio from Various Atari 2600 Games
+			<br />
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

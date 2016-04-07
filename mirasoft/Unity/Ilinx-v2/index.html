@@ -1,0 +1,185 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 531,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Ilinx-v2.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 531px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Ilinx v2
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+
+			<div id="center">
+				Play the Original Prototype<br />
+				<a href="v1" target="_blank">Ilinx v1</a>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			Left Mouse - Shoot<br />
+			[Only in v1] 'W' / 'A' / 'S' / 'D' - Move<br />
+			[Only in v1] Mouse - Look
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The concept of ilinx, or vertigo, was the theme of this prototype.  The goal was to explore the notion that there is fun in experiencing vertigo-inducing effects.  Successful, pre-existing examples of this include roller coasters or the game <i>Super Hexagon</i>, which is a fairly dizzying experience, especially for newer players.  My initial concept was highly experimental, not directly featuring any dizzying effects, and the result was not exactly successful.<br /><br />
+
+			The initial prototype had issues primarily in the clarity of its concept.  Vertigo only influenced its initial design process, but never manifested as a core aspect of the game mechanics.  To address this, the new prototype attempts to create a closer relationship between "ilinx" visuals and gameplay.  The gameplay still remains somewhat separate from the vertigo-inducing aesthetic, but it is designed to cause a visual challenge that causes a communication between visuals and interaction.<br /><br />
+
+			The revision focused on increasing the Ilinx concept in a number of ways.  The dependency on the conceptual interpretation of vertigo from tall buildings was scrapped in favor of a more functional, visual interpretation.  This way, the ambiguity of whether the prototype is in tune with the theme is dealt with.  The visual style now challenges the player to scan and track for objects within a dizzying space.  The combination of seeing the effect and tracking the objects should increase the potential for disorientation.<br /><br />
+
+			The spinning tunnel itself was inspired by a carnival/fair tunnel that spins along its length.  The idea is that simply walking through the tunnel becomes a difficult task, as your body wants to fall over (presumably to counter-act perceived movement of the ground).  The effect is quite dramatic, so my colleagues and I decided to implement the same concept on the <i>Oculus Rift</i>.  The result was quite successful, and some were influenced so much as to nearly fall over in their seat.  Unfortunately, the eventual sickness that resulted from participating at length in the experiments put a halt to further investigation.  One of those spinning tunnels, though, was salvaged for use in this prototype.
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			&nbsp;- Took movement control away from player to "force" their visual orientation.<br />
+			&nbsp;- Disconnected aiming from looking to maintain a consistent visual scenario.<br />
+			&nbsp;- Redesigned the environment to be more stimulating and potentially vertigo-inducing.<br />
+			&nbsp;- Altered enemy flight path and generator for looping gameplay.
+			<br /><br />
+
+			<b>Credits:</b><br />
+			Clandestine Studio - Skyboxes<br />
+			Nobiax (Yughues) - Metal Textures
+			<br />
+        </div>
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

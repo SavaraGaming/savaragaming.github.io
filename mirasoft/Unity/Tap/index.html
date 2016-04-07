@@ -1,0 +1,185 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 531,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Tap.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 531px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				Tap Shooter
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			Left Mouse - Aim<br />
+			Left Mouse on Player / Spacebar - Shoot<br />
+			'1' / '2' / '3' - Switch Weapons (1 - Bullet, 2 - Laser, 3 - Bomb)
+			<br /><br />
+
+			<b>Concept:</b><br />
+			The original concept for this game came about when trying to reconcile my perceived issues with mobile game interfaces, particularly within the shoot-em-up genre.  The problem generally comes about when designers attempt to copy and paste an existing game from one platform onto a mobile device.  An arcade game like <i>1942</i> was not designed to be played on a touch screen, and the interaction ends up suffering for all games like this where too little thought was put into it.  One of the main ways I've seen it implemented is by having the player avatar following your touch with perpetual firing of the guns.  This is obnoxious for a few reasons.  First, I can't see my avatar anymore, because my finger is covering it up.  This makes it hard to see if I'm dodging bullets, already made difficult by the fact that I'm playing on a smaller screen than it was designed for.  Second, I am in much less control over my shooting, because moving and shooting are the same action.  This dulls the interaction down to mindlessness.  This issue is exaggerated by the fact that there are some games that actually pause while you are not touching the screen.  This seems fair balance-wise, but it doesn't fix the issue.  Another solution to this genre I've seen involves relative motion of the touch to control the avatar independent of the location of the touch.  This is similar to a "mouse" control scheme.  This might seem good on paper, but it ends up being even more frustrating because, again, firing my guns is attached to touching.  Now that I have to "ratchet" across the screen, my avatar is flipping out trying to decide whether or not to shoot as my finger lifts off and touches down over and over again just to move around.<br /><br />
+
+			My solution involved removing the ability to move and then focusing the design around what I thought would be the most fun "touch-screen" design.  I knew I wanted "touch" to be "shoot", but it would be singular, a single touch for a single shot, and you would always touch the same place on the screen: some sort of avatar turret.  To me, this felt like the most satisfying way to handle shooting.  I had been suggested to have it shoot where you touch, but this felt uninteresting, as you disconnect the visual aspect of firing at a target from the action itself.  The original concept had the player aiming straight up and would only have to tap the turret when they wanted to shoot.  I decided this wasn't enough to experiment with, so I added an aiming mechanic to the design, so that the player can shoot any direction they choose by touching on white space to aim, then touching the turret to shoot.  Thus, my original prototype featured the player in the middle of the screen with a laser than can be fired all around.<br /><br />
+
+			Once I started experimenting with the visuals of the weapon (originally only a yellow laser), I realized the potential to add a variety of these weapons that had interesting effects.  The rest of the design focused on these effects and their potential to vary gameplay.  After designing enemies to complement these weapons, I started to drift back in the direction of my original design in terms of putting the player at the bottom of the screen and have them only shoot up, but I left the aiming in.  I felt like this was a good balance between gameplay and simplicity, for now.  I still want to try a version of this game that only involves shooting (no aiming).  That aside, it turned out to be a lot harder to design weapon and enemy interaction than I thought.  This means that some of the things that happen in this game will not exactly be readable.  Read the feature list to get a good rundown of what the intentions are, regardless of the quality of the design choices (many of them are not exactly choices, rather consequences of development).
+			<br /><br />
+
+			<b>Features:</b><br />
+			&nbsp;- Three unique weapons with different properties.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Bullet (Yellow):  Projectile that can pierce yellow shield enemies.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Laser (Red):  Instant zap that damages the entire line, but can only kill red enemies (the rest block the laser).<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Bomb (Blue):  Explosion that can be placed anywhere, even on blue armored enemies.<br />
+			&nbsp;- Three enemy types.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Red fodder enemies come in higher numbers and can be damaged with any weapon.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Blue armored enemies can only be damaged with the bomb.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Yellow shielded enemies can only be damaged with the piercing bullet.<br />
+			&nbsp;- A colored indicator on the player circle shows your current weapon selection.<br />
+			&nbsp;- Visual effects on weapons designed to enhance feedback.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Each weapon looks and behaves uniquely.<br />
+			&nbsp;- Aiming and shooting are designed to feel gamey.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Separation of shoot and aim to decrease feelings of arbitrariness and increase gameplay.<br />
+			&nbsp;- Sound effects for firing weapon, weapons getting blocked, and enemies getting destroyed.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Each weapon has a different sound effect.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Blue enemies block bullets and lasers.<br />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Yellow enemies block lasers and bombs.
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

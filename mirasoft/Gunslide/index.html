@@ -1,0 +1,212 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 664,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "Gunslide.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 664px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../">Home</a> | 
+                <a href="../Unity">Unity</a> | 
+                <a href="../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				<i>Gunslide</i>
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+
+			<div style="text-align:center;">
+				<iframe width="560" height="315" src="//www.youtube.com/embed/W_Ouotcgdj8" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<br />
+			
+			<b>How to Play:</b><br />
+
+			<table border="1" style="width:50%">
+			  <tr>
+			    <td><b>Controller:</b></td>
+			    <td><b>Keyboard</b></td>
+			    <td><b>360</b></td>
+			    <td><b>PS3</b></td>
+			  </tr>
+			  <tr>
+			    <td>Accelerate:</td>
+			    <td>Up Arrow</td>
+			    <td>Right Trigger</td>
+			    <td>R2</td>
+			  </tr>
+			  <tr>
+			    <td>Brake/Reverse:</td>
+			    <td>Down Arrow</td>
+			    <td>Left Trigger</td>
+			    <td>L2</td>
+			  </tr>
+			  <tr>
+			    <td>Shoot (Hold):</td>
+			    <td>Spacebar</td>
+			    <td>Right Bumper</td>
+			    <td>R1</td>
+			  </tr>
+			  <tr>
+			    <td>Slide (Hold):</td>
+			    <td>Left Shift</td>
+			    <td>A</td>
+			    <td>X</td>
+			  </tr>
+			  <tr>
+			    <td>Reset:</td>
+			    <td>'R'</td>
+			    <td>Back</td>
+			    <td>Select</td>
+			  </tr>
+			</table>
+			<br />
+
+			Driving around is fairly ordinary.  The interesting part comes when activating the Slide mechanic.  While holding the Slide button, the bike can rotate much more freely, and its friction with the ground is reduced greatly.  This allows advanced maneuvering, such as shooting behind the direction of travel or even circling around an object while still shooting it.  If the Slide button is released, the bike will automatically rotate towards the direction it was traveling (not the direction it was facing).  This allows the bike to smoothly continue its trajectory after performing a slide maneuver without being interrupted.<br /><br />
+
+			<b>Concept:</b><br />
+			This is a Frictionless Motorobike Action game.  It is an action game in which a motorbike (with guns attached, of course) can slide around at high speeds and shoot things up.  The origin of this concept goes back to when I was designing flash games with a buddy of mine.  I came up with top-down adventure game in which the player controls a motorcycle and is able to slide around at high speeds, losing traction with the ground for over-the-top maneuvers.  I never got around to prototyping that original idea, but <i>Gunslide</i> is the modern equivalent.  The vehicle-based action genre has untapped potential, I feel, and this prototype is an early exploration of the possibilities.<br /><br />
+
+			There were a number of decisions that had to be made during development that result in what you see above.  At first, a top-down camera was used as that was in line with the original flash game idea, but it left me underwhelmed even at high speeds.  I wanted the player to really feel like they were going fast, so I shifted the camera down to a more standard vehicle camera from other driving games.  Especially challenging was determining how the Slide logic should behave.  There were several different versions of the Slide physics and several variations on what happens when the button is <i>released</i>.  Though hesitant at first, I ultimately decided to go with a "auto-turning" system that corrects the motorbike to point toward its current velocity once the Slide button is released.  This felt smoother and much more natural than I expected, as I am generally fearful of lessening player control.  The result ended up being a large margin better than the previous versions of the mechanic.
+			<br /><br />
+
+			<b>Credits:</b><br />
+			RoninArt - <i>Akira</i> Motorbike Model<br />
+			Ultimate Arcade, Inc. - Wheel and Tire Texture in <i>Gunslide</i> Teaser
+			<br />
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

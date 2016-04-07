@@ -1,0 +1,188 @@
+<html>
+
+
+<head>
+    <title>Miles Raphael | GT</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css" />
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+	<!--
+	var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+	if (document.location.protocol == 'https:')
+		unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+	document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+	-->
+	</script>
+	<script type="text/javascript">
+	<!--
+		var config = {
+			width: 850, 
+			height: 531,
+			params: { enableDebugging:"0" }
+			
+		};
+		var u = new UnityObject2(config);
+
+		jQuery(function() {
+
+			var $missingScreen = jQuery("#unityPlayer").find(".missing");
+			var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+			$missingScreen.hide();
+			$brokenScreen.hide();
+			
+			u.observeProgress(function (progress) {
+				switch(progress.pluginStatus) {
+					case "broken":
+						$brokenScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$brokenScreen.show();
+					break;
+					case "missing":
+						$missingScreen.find("a").click(function (e) {
+							e.stopPropagation();
+							e.preventDefault();
+							u.installPlugin();
+							return false;
+						});
+						$missingScreen.show();
+					break;
+					case "installed":
+						$missingScreen.remove();
+					break;
+					case "first":
+					break;
+				}
+			});
+			u.initPlugin(jQuery("#unityPlayer")[0], "GT-v2.unity3d");
+		});
+	-->
+	</script>
+	<style type="text/css">
+	<!--
+	div.broken,
+	div.missing {
+		margin: auto;
+		position: relative;
+		top: 50%;
+		width: 193px;
+	}
+	div.broken a,
+	div.missing a {
+		height: 63px;
+		position: relative;
+		top: -31px;
+	}
+	div.broken img,
+	div.missing img {
+		border-width: 0px;
+	}
+	div.broken {
+		display: none;
+	}
+	div#unityPlayer {
+		cursor: default;
+		height: 531px;
+		width: 850px;
+	}
+	div.content2 {
+		width: 850px;
+	}
+	-->
+	</style>
+</head>
+
+<body>
+    <div id="page">
+    
+        <div id="header">
+            Miles Raphael
+            <div id="headerLinks">
+                <a href="../../">Home</a> | 
+                <a href="../../Unity">Unity</a> | 
+                <a href="../../Twine">Twine</a>
+            </div>
+        </div>
+        
+        <div id="content">
+			<div id="contentTitle">
+				GT v2
+			</div>
+		
+            <div style="text-align:center;">
+			<div class="content2">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<br />
+			
+			<div id="center">
+				Play the Original Prototype<br />
+				<a href="v1" target="_blank">GT v1</a>
+			</div>
+			<br />
+			
+			<b>Controls:</b><br />
+			Left Mouse - Accept or Reject Emails
+			<br /><br />
+
+			<b>Concept:</b><br />
+			Our inspiration for this game was the unnecessary volume of emails that Georgia Tech students receive on a daily basis from the school and affiliated organizations in addition to garden variety spam. The goal of this game was to exaggerate this phenomenon to make a point about how much of a chore it is to sort through this spam to find the occasional important email.<br /><br />
+
+			Our initial prototype had the basic loop of sorting emails into "accepted" or "rejected" folders based on the the inbox previews, which were written to be as obvious as possible. In our revision, we've added a few features to give players goals and concrete feedback.<br /><br />
+
+			First, the player now has a friend whose mood is represented by a meter at the bottom of the screen. The actions the player takes towards emails from this friend will affect the meter, with a mood of zero triggering the fail state. Emails are continually getting pushed down the screen by new emails, and any that are pushed off screen are destroyed. The player needs to catch important emails before they get destroyed, which is easier if the inbox is kept clean. Accepting spam will cause more spam to appear, providing an incentive to not simply accept every email.<br /><br />
+
+			The addition of reading emails was to simulate the process that happens in the real world when emails that aren't actually spam become automatically glossed over and deleted (or automatically sorted into the spam folder).  We wanted to replicate the pattern-recognition that occurs naturally through the automatic throwing out of a certain mailing list's emails.  The player should notice that certain email patterns aren't interesting and start automatically deleting those, thus giving the player more time to look at other emails and scout for important, friend-related emails.
+			<br /><br />
+
+			<b>Changelog:</b><br />
+			&nbsp;- Emails can now be opened for viewing.  The game is paused while a message is open.<br />
+			&nbsp;- Added friend meter.  Meter displays your friend's current happiness.<br />
+			&nbsp;- Fixed: reimplemented list of emails - behaves much cleaner and sorts appropriately
+			<br /><br />
+
+			<b>Team Members:</b><br />
+			Miles Raphael<br />
+			Marc Huet
+			<br /><br />
+
+			<b>Credits:</b><br />
+			Google Mail - Inbox Aesthetics<br />
+			My Spam Inbox - Spam Sources
+			<br />
+        </div>
+		
+		
+        <div id="footer">
+            <div id="footerContent">
+                Georgia Institute of Technology<br />
+                College of Computing<br />
+                801 Atlantic Dr NW<br />
+                Atlanta, GA 30332
+            </div>
+            <div id="contact">
+                (703) 822-1139<br />
+                mraphael3@gatech.edu
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+
+</html>

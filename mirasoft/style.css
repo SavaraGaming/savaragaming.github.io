@@ -1,0 +1,203 @@
+body
+{
+	overflow-y: scroll;
+    background-color: #404040;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:link
+{
+	color: #0000CC;
+	text-decoration: none;
+}
+
+a:visited
+{
+	color: #0000CC;
+}
+
+a:hover, a:active
+{
+	color: #CC0000;
+}
+
+.featuredCell
+{
+	width: 270px;
+    margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 125px;
+	margin-right: 5px;
+    display: inline-block;
+    font-size: 80%;
+	vertical-align: top;
+}
+
+
+
+.featuredCellTitle
+{
+    font-weight: bold;
+    font-size: 150%;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.featuredCellTitle a:link
+{
+    color: #333333;
+	text-decoration: none;
+}
+
+.featuredCellTitle a:visited
+{
+	color: #333333;
+}
+
+.featuredCellTitle a:hover, a:active
+{
+	color: #AAAAAA;
+}
+
+.featuredCellImage
+{
+	width: 300px;
+    height: 180px;
+    border: 3px solid;
+}
+
+.projectCell
+{
+    width: 270px;
+    margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+    display: inline-block;
+    font-size: 80%;
+	vertical-align: top;
+}
+
+.projectCell hr
+{
+    border: 1px solid;
+    border-color: #6C747A;
+}
+
+.projectCellTitle
+{
+    font-weight: bold;
+    font-size: 120%;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.projectCellTitle a:link
+{
+    color: #333333;
+	text-decoration: none;
+}
+
+.projectCellTitle a:visited
+{
+	color: #333333;
+}
+
+.projectCellTitle a:hover, a:active
+{
+	color: #AAAAAA;
+}
+
+a img
+{
+    border: 0px;
+}
+
+.projectCellImage
+{
+    width: 270px;
+    height: 150px;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+#page
+{
+	width: 900px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px;
+}
+
+#header
+{
+    color: #FFFFFF;
+    font-size: 110%;
+}
+
+#headerLinks
+{
+    float: right;
+}
+
+#headerLinks a:link
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+#headerLinks a:visited
+{
+	color: #FFFFFF;
+}
+
+#headerLinks a:hover, #headerLinks a:active
+{
+	color: #FFC973;
+}
+
+#content
+{
+    background-color: #FFFFFF;
+    margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+    padding: 25px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+#contentTitle
+{
+	font-weight: bold;
+	font-size: 110%;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#footer
+{
+    color: #FFFFFF;
+}
+
+#footerContent
+{
+	float: right;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+#contact
+{
+	float: left;
+	margin-left: 20px;
+}
+
+#center
+{
+	text-align: center;
+}
