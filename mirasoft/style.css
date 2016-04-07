@@ -136,11 +136,13 @@ a img
 {
     color: #FFFFFF;
     font-size: 110%;
+    margin-left: 20px;
 }
 
 #headerLinks
 {
     float: right;
+    margin-right: 20px;
 }
 
 #headerLinks a:link
@@ -188,13 +190,14 @@ a img
 {
 	float: right;
 	margin-right: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 #contact
 {
 	float: left;
 	margin-left: 20px;
+	margin-bottom: 40px;
 }
 
 #center
