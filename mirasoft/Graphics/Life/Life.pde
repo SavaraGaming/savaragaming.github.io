@@ -10,8 +10,8 @@ boolean[] ruleGrid = new boolean[gridSquared];  //stores next state of each cell
 boolean stepMode = true;                        //toggle for continuous update mode
 
 int XY(int x, int y) { return x+y*gridSize; }   //map 2D coord to 1D index
-int getX(int xy) { return xy%gridSize; }        //map 1D index to 2D x
-int getY(int xy) { return xy/gridSize; }        //map 1D index to 2D y
+int getX(int xy) { return (int)(xy%gridSize); }        //map 1D index to 2D x
+int getY(int xy) { return (int)(xy/gridSize); }        //map 1D index to 2D y
 
 
 void setup()
@@ -133,7 +133,7 @@ void drawGrid()
       fill(255);
     else
       fill(0);
-    rect((i%gridSize)*cellSize, (i/gridSize)*cellSize, cellSize, cellSize);
+    rect((int)(i%gridSize)*cellSize, (int)(i/gridSize)*cellSize, cellSize, cellSize);
   }
 }
 
@@ -142,7 +142,7 @@ void drawGrid()
 
 void mousePressed()
 {
-  int loc = XY(mouseX/cellSize, mouseY/cellSize);
+  int loc = XY((int)(mouseX/cellSize), (int)(mouseY/cellSize));
   lifeGrid[loc] = !lifeGrid[loc];
 }
 
