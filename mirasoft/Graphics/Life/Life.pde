@@ -16,7 +16,7 @@ int getY(int xy) { return xy/gridSize; }        //map 1D index to 2D y
 
 void setup()
 {
-  size(601, 601);
+  size(601, 601, P2D);
 }
 
 void draw()
