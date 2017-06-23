@@ -22,24 +22,51 @@
         
         <div id="content">
 			<div id="contentTitle">
-				Life
+				Alpha Shapes
 			</div>
 
 			<div style="text-align:center;">
-				<iframe width="800" height="600" src="https://www.youtube.com/embed/FIbXlhv0oQk" frameborder="0" allowfullscreen></iframe>
+				<img src="../_images/alpha1.png" Width=800 Height=600>
 			</div>
 			
 			<br />
 			<b>Controls:</b><br />
-			Space<br />
+			2D Mode:<br />
+            A + Click: Add new node<br />
+            Click + Drag: Move node<br />
+            =: Increase radius of Alpha disk (coarser regions)<br />
+            -: Decrease radius of Alpha disk (finer regions)<br />
+            0: Reset Alpha disk to default
+            V: Toggle 2D/3D mode<br/>
+            C: Toggle coloring interior regions<br />
+            F: Toggle fast mode (only renders once upon state change)<br />
+            1-9: Load presets<br />
+            <br />
+            3D Mode:<br />
+            Mouse: Move camera<br />
+            V: Toggle 2D/3D mode
 			<br /><br />
 
 			<b>Concept:</b><br />
-			Hello.
+			This project uses the a user-created Alpha Shape to automatically generate structures with covered interiors. An Alpha Shape is defined by the half-edge exposure of all vertices given an Alpha radius. A half-edge is defined by the oriented line from one vertex to another. A half-edge is exposed if no vertices are members of the disk of radius Alpha whose center lies on the right of the half-edge. The output Alpha shape represents this exposure and additionally labels non-manifold vertices, those with more than two exposed incident half-edges, within the shape. The half-edge exposure cluster vertices into “interior” components densely populated with vertices. The exposed half-edges form the boundary between interior components and the exterior. Dangling vertices, having only one or two immediate neighbors, are considered part of a boundary. Different components have all vertices farther than Alpha radius distance from all other components.<br /><br />
+
+            Once the Alpha Shape is created, we create a 3D render of a structure using specifics gathered from the Alpha Shape representation. The walls of the structure are placed along the boundary of the Alpha Shape’s faces, which are enclosed by loops of oriented edges which are not Alpha-Exposed. Fences are placed along opposing Alpha-Exposed oriented edge pairs. Roofs are constructed above face interiors such that all interior space will be covered by roof and all walls of a given face are connected to one another by sharing roofs. The interior/exterior decision is made on the fly by a tree-traversal of the loop structure in the Alpha Shape. The roofs are constructed out of a pseudo-offset method in which each segment of the roof is formed by moving each vertex along the vertex normal in the interior direction until a collision occurs.
 			<br /><br />
 
 			<b>Credits:</b><br />
-			<a href="https://processing.org/" target="_blank">Processing.org</a>
+			<a href="https://processing.org/" target="_blank">Processing.org</a><br />
+            Base Code: <a href="http://www.cc.gatech.edu/~jarek/" target="_blank">Prof. Jarek Rossignac</a><br />
+            Partner: Sree Ganeshji
+            <br /><br />
+
+            <div style="text-align:center;">
+                <img src="../_images/alpha7.png" Width=800 Height=600><br />
+                <img src="../_images/alpha2.jpg"><br />
+                <img src="../_images/alpha3.jpg"><br />
+                <img src="../_images/alpha4.jpg"><br />
+                <img src="../_images/alpha5.jpg"><br />
+                <img src="../_images/alpha6.jpg">
+            </div>
         </div>
 		
 		

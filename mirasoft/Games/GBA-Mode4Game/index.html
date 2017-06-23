@@ -22,30 +22,33 @@
         
         <div id="content">
 			<div id="contentTitle">
-				Game Boy Advance
+				4-Way Shooter (mode 4)
 			</div>
 
 			<div style="text-align:center;">
-				<iframe width="800" height="600" src="https://www.youtube.com/embed/FIbXlhv0oQk" frameborder="0" allowfullscreen></iframe>
+				<img src="../_images/mode4game1.png">
 			</div>
 			
 			<br />
 			<b>Controls:</b><br />
-			Mouse - Move<br />
-			Left Mouse - Shoot
+			D-Pad: Move<br />
+			B: Shoot<br />
+            L: Rotate shooting direction counter-clockwise<br />
+            R: Rotate shooting direction clockwise
 			<br /><br />
 
 			<b>Concept:</b><br />
-			The theme of this prototype was to incorporate urbanism into a game somehow.  The first thing that came to mind for me was music, as the center for musical or general artistic culture is generally an urban setting.  I really wanted to bring the city alive through music to show an urban environment as a musical center.  I modified a spectrum analyzer to place "buildings" in a pattern that roughly appeared city-like, then made sure that something interesting was always happening on screen (a real spectrum analysis would have been boring after the first few frequencies).  I'm quite happy with the result, especially when you can see a sweep echo through the buildings.<br /><br />
+			This project is designed to overcome the rendering speed limitations of mode 3 by sacrificing resolution. In mode 4, page flipping between two display buffers drastically increasing the amount of animation we can render smoothly. This game is an attempt at demonstrating this additional speed. Many enemies spawn each wave and shoot projectiles, causing large waves of bullets. Additionally, the player can shoot a rapidly moving stream of bullets in four directions to clear each wave. Although there are many bullets on screen, the enemy bullets move quite slowly compared to the player bullets. This allows the player to maneuver swiftly between the waves of projectiles without much trouble.<br /><br />
 
-			Another aspect of urbanism I felt strongly about in this prototype is urban culture's tendency to persist all day and all night.  The day-to-night transition in this prototype occurs smoothly in the background (a trick I was stunned worked so well).  I felt showing the entire day/night cycle was a way to capture aspects of different lifestyles at once.<br /><br />
+            This project was also built upon with audio, sprites, and a state machine to get some practice before the tilemap modes. Also in this version, the rate of fire on the player bullets was increased, and an extra difficulty mode was added after beating the regular waves. These extra levels include a lot more enemies (and consequently, much bigger waves of bullets).<br /><br />
 
-			Admittedly, this is one of my favorite vignettes I've done.
-			<br /><br />
+            <b>Credits:</b><br />
+            Sprites: Tyrian<br />
+            Other Images: Touhou<br /><br />
 
-			<b>Credits:</b><br />
-			Anamanaguchi - Music, Logo<br />
-			<i>Pokemon: Emerald</i> (GBA, 2004) - Background Source
+            <div style="text-align:center;">
+                <img src="../_images/mode4game2.png">
+            </div>
         </div>
 		
 		

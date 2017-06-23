@@ -22,24 +22,49 @@
         
         <div id="content">
 			<div id="contentTitle">
-				Life
+				Parallel Transport
 			</div>
 
 			<div style="text-align:center;">
-				<iframe width="800" height="600" src="https://www.youtube.com/embed/FIbXlhv0oQk" frameborder="0" allowfullscreen></iframe>
+				<img src="../_images/parallel7.png">
 			</div>
 			
 			<br />
 			<b>Controls:</b><br />
-			Space<br />
+			4: Four-Point subdivision<br />
+            5: J-spline preserving most area<br />
+            6: Cubic B-spline<br />
+            7: Quintic B-spline<br />
+            8: Quadratic B-spline<br />
+            0: Disable subdivision curve<br />
+            =: Increase subdivision amount<br />
+            -: Decrease subdivision amount<br />
+            C: Toggle control polyloop visibility<br />
+            V: Toggle 2D/3D rendering<br />
+            B: Toggle parallel transport frame visibility<br />
+            N: Toggle road visibility
 			<br /><br />
 
 			<b>Concept:</b><br />
-			Hello.
+			Using a general subdivision sheme (J-spline) we can create curves of different properties, often trading off interpolation with smoothness. This project demonstrates a Rotation Minimizing Frame using these curves.
 			<br /><br />
 
 			<b>Credits:</b><br />
-			<a href="https://processing.org/" target="_blank">Processing.org</a>
+			<a href="https://processing.org/" target="_blank">Processing.org</a><br />
+            Base Code: <a href="http://www.cc.gatech.edu/~jarek/" target="_blank">Prof. Jarek Rossignac</a><br />
+            Paper Referenced: <a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2016/12/Computation-of-rotation-minimizing-frames.pdf" target="_blank">"Computation of Rotation Minimizing Frames"</a>
+            <br /><br />
+
+            <div style="text-align:center;">
+                <img src="../_images/parallel1.png">
+            </div>
+            <div style="text-align:center;">
+                <img src="../_images/parallel2.png">
+                <img src="../_images/parallel3.png">
+                <img src="../_images/parallel4.png">
+                <img src="../_images/parallel5.png">
+                <img src="../_images/parallel6.png">
+            </div>
         </div>
 		
 		

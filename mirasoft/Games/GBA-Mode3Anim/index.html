@@ -22,30 +22,16 @@
         
         <div id="content">
 			<div id="contentTitle">
-				Game Boy Advance
+				Simple Animation (mode 3)
 			</div>
 
 			<div style="text-align:center;">
-				<iframe width="800" height="600" src="https://www.youtube.com/embed/FIbXlhv0oQk" frameborder="0" allowfullscreen></iframe>
+				<img src="../_images/anim1.png">
 			</div>
 			
 			<br />
-			<b>Controls:</b><br />
-			Mouse - Move<br />
-			Left Mouse - Shoot
-			<br /><br />
-
 			<b>Concept:</b><br />
-			The theme of this prototype was to incorporate urbanism into a game somehow.  The first thing that came to mind for me was music, as the center for musical or general artistic culture is generally an urban setting.  I really wanted to bring the city alive through music to show an urban environment as a musical center.  I modified a spectrum analyzer to place "buildings" in a pattern that roughly appeared city-like, then made sure that something interesting was always happening on screen (a real spectrum analysis would have been boring after the first few frequencies).  I'm quite happy with the result, especially when you can see a sweep echo through the buildings.<br /><br />
-
-			Another aspect of urbanism I felt strongly about in this prototype is urban culture's tendency to persist all day and all night.  The day-to-night transition in this prototype occurs smoothly in the background (a trick I was stunned worked so well).  I felt showing the entire day/night cycle was a way to capture aspects of different lifestyles at once.<br /><br />
-
-			Admittedly, this is one of my favorite vignettes I've done.
-			<br /><br />
-
-			<b>Credits:</b><br />
-			Anamanaguchi - Music, Logo<br />
-			<i>Pokemon: Emerald</i> (GBA, 2004) - Background Source
+			This project is meant to demonstrate the difficulties associated with animating on a pixel-by-pixel basis. Making large changes per frame quickly results in slowdown. Thus, the goal becomes optimizing as much as possible while remaining compelling. I chose to work around the limiting hardware by introducing a few elements that didn't compromise drawing time. I started by adding dynamics: my initials bounce in place with acceleration. Then, I modified the colors of each letter based on their dynamics and phase-shifted by letter. This caused a wave of color to roll over the letters are the same time in every bounce. These types of tricks are interesting and sacrifice little rendering time.
         </div>
 		
 		
