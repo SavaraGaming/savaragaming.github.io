@@ -21,6 +21,10 @@ a:hover, a:active
 	color: #CC0000;
 }
 
+a[href^="mailto"] { color: lightblue; }
+a[href^="mailto"]:hover { color: #FFC973; }
+a[href^="mailto"]:hover:active { color: darkgray; }
+
 .featuredCell
 {
 	width: 270px;
@@ -147,18 +151,25 @@ a img
 
 #headerLinks a:link
 {
-	color: #FFFFFF;
+	/*color: #FFFFFF;*/
+	color: lightblue;
 	text-decoration: none;
 }
 
 #headerLinks a:visited
 {
-	color: #FFFFFF;
+	/*color: #FFFFFF;*/
+	color: lightblue;
 }
 
-#headerLinks a:hover, #headerLinks a:active
+#headerLinks a:hover
 {
 	color: #FFC973;
+}
+
+#headerLinks a:active
+{
+	color: darkgray;
 }
 
 #content
