@@ -22,24 +22,36 @@
         
         <div id="content">
 			<div id="contentTitle">
-				Life
+				Seam Carving
 			</div>
 
 			<div style="text-align:center;">
-				<iframe width="800" height="600" src="https://www.youtube.com/embed/FIbXlhv0oQk" frameborder="0" allowfullscreen></iframe>
+				<img src="../_images/seamcarving1.png">
 			</div>
 			
 			<br />
 			<b>Controls:</b><br />
-			Space<br />
+            Left Click: Apply current resize/paint mode<br />
+			1: Resize mode<br />
+            2: Preserve mode: paint preservation regions<br />
+            3: Delete mode: paint delete regions<br />
+            4: Clear mode: clear regions of paint
 			<br /><br />
 
 			<b>Concept:</b><br />
-			Hello.
+			Seam Carving, also known as "Content-Aware Image Resizing" or "Liquid Rescaling", allows scaling of an image without stretching/shrinking artifacts. The algorithm works by calculating the lowest energy seams (in this case gradient magnitude energy) from one end of the image to the other and removing those first. This preserves the highest energy content, which in the case of the gradient magnitude are seams which include edges in the scene. Preservation and Deletion regions work by modifying the energy calculated to be higher or lower than natural so those regions become preferred or rejected for seam carving.
 			<br /><br />
 
 			<b>Credits:</b><br />
-			<a href="https://processing.org/" target="_blank">Processing.org</a>
+			<a href="https://processing.org/" target="_blank">Processing.org</a><br />
+            Paper Referenced: <a href="http://graphics.cs.cmu.edu/courses/15-463/2007_fall/hw/proj2/imret.pdf" target="_blank">"Seam Carving for Content-Aware Image Resizing"</a>
+            <br /><br />
+
+            <div style="text-align:center;">
+                <img src="../_images/seamcarving2.png"><br /><br />
+                <img src="../_images/seamcarving3.png">
+                <img src="../_images/seamcarving4.png">
+            </div>
         </div>
 		
 		
