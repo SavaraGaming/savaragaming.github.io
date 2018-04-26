@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>Miles Raphael | Mirasoft</title>
+  <link rel="icon" href="../../../img/favicon.png" type="image/png" sizes="16x16 32x32" />
+  <link rel="stylesheet" type="text/css" href="../../style.css" />
+  <script src="TemplateData/UnityProgress.js"></script>  
+  <script src="Build/UnityLoader.js"></script>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/ProceduralContent.json", {onProgress: UnityProgress});
+  </script>
+
+  <style type="text/css">
+  <!--
+  div.broken,
+  div.missing {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    width: 193px;
+  }
+  div.broken a,
+  div.missing a {
+    height: 63px;
+    position: relative;
+    top: -31px;
+  }
+  div.broken img,
+  div.missing img {
+    border-width: 0px;
+  }
+  div.broken {
+    display: none;
+  }
+  div#unityPlayer {
+    cursor: default;
+    height: 625px;
+    width: 850px;
+  }
+  div.content2 {
+    width: 850px;
+  }
+  -->
+</style>
+</head>
+
+<body>
+  <div id="page">
+
+    <div id="header">
+      Miles Raphael
+      <div id="headerLinks">
+        <a href="../../">Home</a> | 
+        <a href="../">Games</a> | 
+        <a href="../../Graphics">Graphics</a> |
+        <a href="../../Narratives">Narratives</a>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="contentTitle">
+        Desert
+      </div>
+
+      <div style="text-align:center;">
+        <div class="content2">
+          <div id="gameContainer" style="width: 850px; height: 600px;"></div>
+        </div>
+      </div>
+
+      <br />
+      <b>Controls:</b><br />
+      W, A, S, D keys: Move Camera
+      <br /><br />
+
+      <b>Concept:</b><br />
+      This is a demo of various procedural generation techniques used in games. All meshes in the demo are crafted programatically, with one exception: the little green plants that litter the landscape are just some Unity primitives.<br /><br />
+      Terrain
+      <br />
+      The terrain is built with an Octave Perlin noise function, then pieced together. Careful consideration had to be done at the seams between mesh "chunks" where vertex normals had to be adjusted after generation to make a smooth connection. The chunks load in and out as the player moves the camera, essentially creating an infinite landscape. The land itself will be the same when returning to a previous position. The color of the landscape varies with height, with lower positions being darker. Randomly placed plants and water spice up the appearance a little bit. The water is placed pretty naively, so it can potentially lead to awkward looking situations.
+      <br /><br />
+      Buildings
+      <br />
+      Text
+      <br /><br />
+      Vehicles
+      <br />
+      Text
+      <br /><br />
+      Flocking
+      <br />
+      Text
+      <br /><br />
+
+      <b>Credits:</b><br />
+      <a href="https://unity3d.com/" target="_blank">Unity 3D</a>
+    </div>
+
+    <div id="footer">
+      <div id="footerContent">
+        MS Computer Science - Computer Graphics (in progress) <br />
+        BS Computational Media - Media and Game Studies <br />
+        @ Georgia Institute of Technology
+      </div>
+      <div id="contact">
+        (703) 822-1139<br />
+        <a href="mailto:miragamesoft@gmail.com">miragamesoft@gmail.com</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
