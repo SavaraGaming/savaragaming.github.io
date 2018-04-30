@@ -76,19 +76,19 @@
       This is a demo of various procedural generation techniques used in games. All meshes in the demo are crafted programatically, with one exception: the little green plants that litter the landscape are just some Unity primitives.<br /><br />
       Terrain
       <br />
-      The terrain is built with an Octave Perlin noise function, then pieced together. Careful consideration had to be done at the seams between mesh "chunks" where vertex normals had to be adjusted after generation to make a smooth connection. The chunks load in and out as the player moves the camera, essentially creating an infinite landscape. The land itself will be the same when returning to a previous position. The color of the landscape varies with height, with lower positions being darker. Randomly placed plants and water spice up the appearance a little bit. The water is placed pretty naively, so it can potentially lead to awkward looking situations.
+      The terrain is built with an Octave Perlin noise function, pieced together in chunks. At the seams between mesh chunks, vertex normals had to be adjusted after generation to make a smooth connection. The chunks load in and out as the player moves the camera, essentially creating an infinite landscape. The land itself will be the same when returning to a previous position. The color of the landscape varies with height, with lower positions being darker. Randomly placed plants and water spice up the appearance a little bit. These are placed pretty naively, so it can potentially lead to awkward looking situations where the edge of water is visible floating in air.
       <br /><br />
       Buildings
       <br />
-      Text
+      Buildings are generated using a set of pre-defined height grids, then a selection between two different door and window textures and a selection between two roof types: hip or mansard. The building walls are made out of cubes with window/door pieces "cut out" of each face. This way a uv-textured mesh could fit cleanly inside each face of each cube. There is some stutter when the player camera triggers additional landscape, which results mostly from unoptomizations in building generation, which creates and destroys many GameObjects every time new terrain chunks are built. I will improve this by implementing Object Pooling, and updating some routines that generate more meshes than necessary.
       <br /><br />
       Vehicles
       <br />
-      Text
+      The vehicles are logically separated into swappable parts: body, cockpit, thrusters, and optional wings. All components of each vehicle are constructed using bezier surfaces of revolution, except the wings, which use bezier patches. The body style is selected from a few different pre-defined meshes with some randomized elements of size. The body generation is also responsible for maintaining the placement of all subsequent components. The cockpit is formed from a half-rotation. The thrusters can be either one main thruster, twin thrusters, or the main + twin thrusters, which also vary in length. Wings, which are completely optional, are generated using a single bezier patch which varies in length.
       <br /><br />
       Flocking
       <br />
-      Text
+      The vehicles exhibit flocking behavior as they fly across the landscape. The flocking is a basic implementation of Craig Reynolds' original system: using flock centering, velocity matching, collision avoidance, and wandering forces. The mini-flocks seen flying above the landscape have an invisible "leader" that is not subject to flocking forces but has unlimited range of influence over other agents in the flock. This causes the vehicles to follow a specified path across the sky, while also interacting with eachother in a semi-random, believable way. The number of vehicles in each mini-flock is also random.
       <br /><br />
 
       <b>Credits:</b><br />
@@ -97,7 +97,7 @@
 
     <div id="footer">
       <div id="footerContent">
-        MS Computer Science - Computer Graphics (in progress) <br />
+        MS Computer Science - Computer Graphics <br />
         BS Computational Media - Media and Game Studies <br />
         @ Georgia Institute of Technology
       </div>
