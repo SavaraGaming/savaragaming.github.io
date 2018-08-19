@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title>Miles Raphael | Mirasoft</title>
+  <link rel="icon" href="../../../img/favicon.png" type="image/png" sizes="16x16 32x32" />
+  <link rel="stylesheet" type="text/css" href="../../style.css" />
+  <script src="TemplateData/UnityProgress.js"></script>  
+  <script src="Build/UnityLoader.js"></script>
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Builds.json", {onProgress: UnityProgress});
+  </script>
+
+  <style type="text/css">
+  <!--
+  div.broken,
+  div.missing {
+    margin: auto;
+    position: relative;
+    top: 50%;
+    width: 193px;
+  }
+  div.broken a,
+  div.missing a {
+    height: 63px;
+    position: relative;
+    top: -31px;
+  }
+  div.broken img,
+  div.missing img {
+    border-width: 0px;
+  }
+  div.broken {
+    display: none;
+  }
+  div#unityPlayer {
+    cursor: default;
+    height: 625px;
+    width: 850px;
+  }
+  div.content2 {
+    width: 850px;
+  }
+  -->
+</style>
+</head>
+
+<body>
+  <div id="page">
+
+    <div id="header">
+      Miles Raphael
+      <div id="headerLinks">
+        <a href="../../">Home</a> | 
+        <a href="../">Games</a> | 
+        <a href="../../Graphics">Graphics</a> |
+        <a href="../../Narratives">Narratives</a>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="contentTitle">
+        Packet Rush
+      </div>
+
+      <div style="text-align:center;">
+        <div class="content2">
+          <div id="gameContainer" style="width: 850px; height: 600px;"></div>
+        </div>
+      </div>
+
+      <br />
+      <b>Controls:</b><br />
+      Click (Tap): Navigate Menus<br />
+      Click (Tap) and Drag Up or Down: Change Lanes<br />
+      Objective: Avoid the viruses!
+      <br /><br />
+
+      <b>Concept:</b><br />
+      This is a quick, single-action mobile game about traveling the internet. Some functionality may be limited or missing in this particular build. For example, the ad screen gets skipped on the WebGL build and the DLC screen is just for show. This was a team project for my undergraduate Senior Design class. I programmed the main interaction of swiping to change lanes.<br /><br />
+
+      <b>Credits:</b><br />
+      Randal Brown<br />
+      Ashutosh Gupta<br />
+      Alexander Ikonomidis<br />
+      <a href="https://unity3d.com/" target="_blank">Unity 3D</a>
+    </div>
+
+    <div id="footer">
+      <div id="footerContent">
+        MS Computer Science - Computer Graphics <br />
+        BS Computational Media - Media and Game Studies <br />
+        @ Georgia Institute of Technology
+      </div>
+      <div id="contact">
+        (703) 822-1139<br />
+        <a href="mailto:miragamesoft@gmail.com">miragamesoft@gmail.com</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
