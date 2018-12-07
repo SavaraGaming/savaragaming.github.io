@@ -57,7 +57,7 @@
 		// Sidebar
 			$('#sidebar')
 				.panel({
-					delay: 500,
+					delay: 0,
 					hideOnClick: true,
 					hideOnSwipe: true,
 					resetScroll: true,
