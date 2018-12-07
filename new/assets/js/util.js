@@ -77,6 +77,9 @@
 				// Hide panel on swipe.
 					hideOnSwipe: false,
 
+				// Hide panel on page load.
+					hideOnLoad: false,
+
 				// Reset scroll position on hide.
 					resetScroll: false,
 
@@ -291,6 +294,12 @@
 							$this._hide(event);
 
 					});
+
+			// Hide on Page Load.
+				if (config.hideOnLoad)
+					$window.onload = function() {
+						$this._hide(event);
+					};
 
 		return $this;
 

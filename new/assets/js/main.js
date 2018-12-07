@@ -58,8 +58,9 @@
 			$('#sidebar')
 				.panel({
 					delay: 0,
-					hideOnClick: true,
+					hideOnClick: false,
 					hideOnSwipe: true,
+					hideOnLoad: true,
 					resetScroll: true,
 					resetForms: true,
 					side: 'left',
