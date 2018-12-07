@@ -105,28 +105,29 @@
 			</div>
 
 		<!-- Sidebar -->
-			<div id="sidebar">
+			<div id="sidebar"></div>
 
 				<!-- Logo -->
-					<h1 id="logo"><a href="#">SAVARA</a></h1>
+					<!-- <h1 id="logo"><a href="#">SAVARA</a></h1> -->
 
 				<!-- Nav -->
-					<nav id="nav">
+					<!-- <nav id="nav">
 						<ul>
 							<li class="current"><a href="#">Home</a></li>
-							<li><a href="#">Reviews</a></li>
-							<li><a href="#">Guides</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
+							<li><a href="reviews">Reviews</a></li>
+							<li><a href="guides">Guides</a></li>
+							<li><a href="blog">Blog</a></li>
+							<li><a href="about">About</a></li>
+							<li><a href="contact">Contact</a></li>
 						</ul>
-					</nav>
+					</nav> -->
 
 				<!-- Search -->
-					<section class="box search">
+					<!-- <section class="box search">
 						<form method="post" action="#">
 							<input type="text" class="text" name="search" placeholder="Search" />
 						</form>
-					</section>
+					</section> -->
 
 				<!-- Text -->
 					<!-- <section class="box text-style1">
@@ -231,7 +232,7 @@
 						<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul> -->
 
-			</div>
+			<!-- </div> -->
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -239,6 +240,11 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+			$(function(){
+				$( "#sidebar" ).load( "sidebar.html" );
+			});
+			</script>
 
 	</body>
 </html>
