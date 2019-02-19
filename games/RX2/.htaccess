@@ -1,0 +1,4 @@
+AuthUserFile /savaragaming.github.io/games/RX2/.htpasswd
+AuthType Basic
+AuthName "Mirasoft"
+Require valid-user
