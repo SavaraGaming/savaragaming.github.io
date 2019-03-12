@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>savaragaming.com/main/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/player/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/world/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/user-interface/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/style/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/mvp/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/localization/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/techdocs/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/game-objects/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/asset-lists/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/ideas-and-questions/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/prototypes/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/player/controls/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
