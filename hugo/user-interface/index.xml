@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>User Interface on RX2</title>
-    <link>savaragaming.github.io/user-interface/</link>
+    <link>savaragaming.github.io/hugo/user-interface/</link>
     <description>Recent content in User Interface on RX2</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="savaragaming.github.io/user-interface/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="savaragaming.github.io/hugo/user-interface/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
