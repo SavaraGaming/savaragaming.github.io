@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>savaragaming.github.io/main/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/player/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/world/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/user-interface/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/style/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/mvp/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/tools/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/localization/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/techdocs/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/game-objects/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/asset-lists/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/ideas-and-questions/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/prototypes/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/player/controls/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/</loc>
+  </url>
+  
+  <url>
+    <loc>savaragaming.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
