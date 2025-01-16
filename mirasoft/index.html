@@ -2,88 +2,56 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Emily Raphael's portfolio. MSCS Computer Graphics at Georgia Institute of Technology">
-    <meta name="keywords" content="game development, game design, narrative design, computer graphics, computer animation, computational photography">
+    <meta name="description"
+        content="Emily Raphael's portfolio. MSCS Computer Graphics at Georgia Institute of Technology">
+    <meta name="keywords"
+        content="game development, game design, narrative design, computer graphics, computer animation, computational photography">
     <meta name="robots" content="NOODP">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Emily Raphael | Mirasoft</title>
     <link rel="icon" href="../images/favicon.png" type="image/png" sizes="16x16 32x32" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-74568803-1', 'auto');
-      ga('send', 'pageview');
+        ga('create', 'UA-74568803-1', 'auto');
+        ga('send', 'pageview');
     </script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#nav-home").on("click", function () {
+                $("#content").load("home.html");
+            });
+            $("#nav-games").on("click", function () {
+                $("#content").load("Games/games.html");
+            });
+            $("#nav-graphics").on("click", function () {
+                $("#content").load("Graphics/graphics.html");
+            });
+            $("#nav-narratives").on("click", function () {
+                $("#content").load("Narratives/narratives.html");
+            });
+        });
+    </script>
 </head>
 
 <body>
     <div id="page">
-    
-        <div id="header">
-            Emily Raphael
-            <div id="headerLinks">
-                Home |
-                <a href="Games">Games</a> |
-                <a href="Graphics">Graphics</a> |
-                <a href="Narratives">Narratives</a>
-            </div>
-        </div>
-        
-        <div id="content">
-            <div id="contentTitle">
-                Projects
-            </div>
-            
-            <div id="contentRow">
-                <span class="projectCell">
-                    <a href="Games"><div class="projectCellImage"><img src="_images/FullSwingThumb_1.png" /></div>
-                    <span class="projectCellTitle">Games</span></a>
-                    <hr />
-                    Game prototypes, revisions, and other projects exporing a variety of experimental themes and their applications to game design.  
-                </span>
-                <span class="projectCell">
-                    <a href="Graphics"><div class="projectCellImage"><img src="_images/raytrace0.png" /></div>
-                    <span class="projectCellTitle">Graphics</span></a>
-                    <hr />
-                    A variety of real-time computer graphics tools, demos, and simulations.
-                </span>
-                <span class="projectCell">
-                    <a href="Narratives"><div class="projectCellImage"><img src="_images/TwineThumb_2.png" /></div>
-                    <span class="projectCellTitle">Narratives</span></a>
-                    <hr />
-                    Text-based prototypes exploring a selection of narrative structures and their consequences on interaction in fiction.
-                </span>
-            </div>
-            
-            <!-- <br /><br />
-            <hr />
-            <span class="featuredCell">
-                <span class="featuredCellTitle">Coming Soon</span><br />
-                <b>Games:</b> More GBA Stuff!<br />
-                <b>Graphics:</b> Procedural Content Generation!
-            </span> -->
-            <!-- <span class="projectCell">
-				<a href="FullSwing"><div class="projectCellImage"><img src="images/FullSwingThumb_1.png" /></div>
-                <span class="projectCellTitle"><i>Full Swing</i></span></a>
-                <hr />
-                A single-level proof-of-concept of a speedrunning game based around a grappling hook mechanic.
-            </span> -->
-        </div>
-
+        <div id="header"></div>
+        <div id="content"></div>
         <div id="footer"></div>
-
     </div>
-
     <script>
-        $( "#footer" ).load( "footer.html" );
+        $("#header").load("header.html");
+        $("#content").load("home.html");
+        $("#footer").load("footer.html");
     </script>
-
 </body>
 
 </html>
