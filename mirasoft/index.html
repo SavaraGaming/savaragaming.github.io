@@ -19,6 +19,7 @@
       ga('create', 'UA-74568803-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 
 <body>
@@ -74,21 +75,15 @@
                 A single-level proof-of-concept of a speedrunning game based around a grappling hook mechanic.
             </span> -->
         </div>
-        
-        <div id="footer">
-            <div id="footerContent">
-                MS Computer Science - Computer Graphics <br />
-                BS Computational Media - Media and Game Studies <br />
-                @ Georgia Institute of Technology
-            </div>
-            <div id="contact">
 
-                <a href="mailto:miragamesoft@gmail.com">miragamesoft@gmail.com</a>
-            </div>
-        </div>
-        
+        <div id="footer"></div>
+
     </div>
-</body>
 
+    <script>
+        $( "#footer" ).load( "footer.html" );
+    </script>
+
+</body>
 
 </html>
